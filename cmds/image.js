@@ -62,7 +62,7 @@ onLaunch: async function ({ api, event, target }) {
         }
 
         await api.sendMessage({
-            body: `📸 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁\n━━━━━━━━━━━━━━━\n\nHere are the top ${numberSearch} results for your query "${keySearchs}"`,
+            body: `📸 𝗣𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁\n━━━━━━━━━━━━━\n\nHere are the top ${numberSearch} results for your query "${keySearchs}\n\n━━━━━━━━━━━━━━━━━━\nThis Ai is made by ICT students in Pau Excellencia Global Academy Foundation, Inc.(Pegafi)"`,
             attachment: imgData,
         }, event.threadID, event.messageID);
     api.unsendMessage(lod.messageID);

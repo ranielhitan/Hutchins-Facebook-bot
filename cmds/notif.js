@@ -17,7 +17,7 @@ module.exports = {
     let senderInfo = await api.getUserInfo(event.senderID);
     let senderName = senderInfo[event.senderID].name;
 
-    const jonell = `👤 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗙𝗿𝗼𝗺 𝗔𝗱𝗺𝗶𝗻\n━━━━━━━━━━━━━━━━━━\n${content}\n\nDeveloper: ${senderName}`;
+    const jonell = `👤 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗙𝗿𝗼𝗺 𝗔𝗱𝗺𝗶𝗻\n━━━━━━━━━━━━━━━━━━\nContent:\n${content}\n\nDeveloper: ${senderName}`;
 
     try {
       let threads = await api.getThreadList(500, null, ['INBOX']); 

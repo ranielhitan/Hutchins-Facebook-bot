@@ -58,7 +58,7 @@ api.setMessageReaction("⏱️", event.messageID, () => {}, true);        try {
             const response = await axios.get(apiUrl);
             const { response: result } = response.data;
 
-            const responseMessage = `𝗖𝗛𝗔𝗧𝗚𝗣𝗧\n━━━━━━━━━━━━━━━━━━\n${result}\n━━━━━━━━━━━━━━━━━━`;
+            const responseMessage = `𝗖𝗛𝗔𝗧𝗚𝗣𝗧\n━━━━━━━━━━━━━━━━━━\n${result}\n━━━━━━━━━━━━━━━━━\n\nThis Ai is made by ICT students in Pau Excellencia Global Academy Foundation, Inc.(Pegafi)\n━━━━━━━━━━━━━━━━━━\n`;
             api.editMessage(responseMessage, lad.messageID, event.threadID, messageID);
 
             global.client.onReply.push({
