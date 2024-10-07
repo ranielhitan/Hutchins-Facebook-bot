@@ -6,10 +6,10 @@ module.exports = {
     name: "help",
     usedby: 0,
     info: "display available commands",
-    dev: "Jonell Magallanes",
+    dev: "Raniel Hiyan",
     onPrefix: false,
     usages: "help",
-    cooldowns: 10,
+    cooldowns: 5,
 
     onLaunch: async function ({ api, event, target }) {
         const cmdsPath = path.join(__dirname, '');
@@ -23,10 +23,9 @@ module.exports = {
         const commandsPerPage = 10;
         const totalPages = Math.ceil(visibleCommandFiles.length / commandsPerPage);
 
+        let page = parseInt(target[0]);
 
-        let page = target[0] ? parseInt(target[0]) : 1;
-
-
+        
         if (!isNaN(page)) {
             if (page <= 0 || page > totalPages) {
                 return api.sendMessage(`Page not found. Please choose between 1 and ${totalPages}.`, event.threadID, event.messageID);
@@ -43,11 +42,10 @@ module.exports = {
                 helpMessage += `│✧ ${commandInfo.name || "Unknown"}\n`;
             });
 
-            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType ${adminConfig.prefix}help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}`;
+            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType ${adminConfig.prefix}help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}\n\n━━━━━━━━━━━━━━━━━━\n\nThis Ai is made by ICT students in Pau Excellencia Global Academy Foundation, Inc.(Pegafi)`;
 
             return api.shareContact(helpMessage, api.getCurrentUserID(), event.threadID);
         }
-
 
         if (target[0]) {
             const commandName = target[0];
@@ -69,7 +67,7 @@ module.exports = {
                     `│✧ Description: ${commandInfo.info || "Unknown"}\n` +
                     `│✧ Need Prefix: ${commandInfo.onPrefix !== undefined ? commandInfo.onPrefix : "Unknown"}\n` +
                     `╰───────────◊`;
-                return api.shareContact(helpMessage, api.getCurrentUserID(), event.threadID);
+                return api.sendMessage(helpMessage, event.threadID, event.messageID);
             } else {
                 return api.sendMessage(`Command "${commandName}" not found.`, event.threadID);
             }
