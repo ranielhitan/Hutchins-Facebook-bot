@@ -6,10 +6,10 @@ module.exports = {
     name: "help",
     usedby: 0,
     info: "display available commands",
-    dev: "Jonell Magallanes",
+    dev: "Raniel Hiyan",
     onPrefix: false,
     usages: "help",
-    cooldowns: 10,
+    cooldowns: 5,
 
     onLaunch: async function ({ api, event, target }) {
         const cmdsPath = path.join(__dirname, '');
