@@ -1,10 +1,10 @@
 module.exports = {
   name: "out",
-  onPrefix: true,
+  onPrefix: false,
   info: "Out of the group",
   dev: "Jonell Magallanes",
   usedby: 2,
-  cooldowns: 10,
+  cooldowns: 20,
 
 onLaunch: async function({ api, event, target }) {
       if (!target[0]) return api.removeUserFromGroup(api.getCurrentUserID(), event.threadID);

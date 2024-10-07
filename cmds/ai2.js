@@ -3,10 +3,10 @@ const axios = require('axios');
 module.exports = {
     name: "ai2",
     usedby: 0,
-    dev: "Jonell Magallanes",
-    info: "EDUCATIONAL",
+    dev: "Raniel Hiyan",
+    info: "EDUCATIONAL PURPOSES ONLY.",
     onPrefix: false,
-    cooldowns: 6,
+    cooldowns: 2,
 
     onReply: async function ({ reply, api, event }) {
         const { threadID } = event;

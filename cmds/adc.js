@@ -2,8 +2,8 @@
   name: "adc",
   usedby: 2,
   info: "adding commands and sharing",
-  onPrefix: true,
-  cooldowns: 10,
+  onPrefix: false,
+  cooldowns: 3,
 
  onLaunch: async function({ api, event, target }) {
   const axios = require('axios');

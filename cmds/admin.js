@@ -4,8 +4,8 @@ const adminConfig = JSON.parse(fs.readFileSync("admin.json", "utf8"));
 module.exports = {
   name: "admin",
   usedby: 4,
-  dev: "Jonell Magallanes",
-  onPrefix: true,
+  dev: "Raniel Hiyan",
+  onPrefix: false,
   cooldowns: 1,
   info: "Admin and Moderator List",
   hide: true,

@@ -19,7 +19,7 @@ module.exports = {
     name: "thread",
     usedby: 2,
     info: "Manage thread approvals",
-    onPrefix: true,
+    onPrefix: false,
     dev: "Jonell Magallanes",
     cooldowns: 1,
 

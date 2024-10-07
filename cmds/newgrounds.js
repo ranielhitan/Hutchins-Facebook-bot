@@ -3,10 +3,10 @@ const path = require('path');
 const axios = require('axios');
 
 module.exports = {
-  name: "ng",
+  name: "newgrounds",
   usedby: 0,
   info: "Get music from Newgrounds",
-  onPrefix: true,
+  onPrefix: false,
   dev: "Jonell Magallanes",
   cooldowns: 10,
 

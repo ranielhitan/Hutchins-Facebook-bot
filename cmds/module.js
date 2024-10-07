@@ -5,8 +5,8 @@ module.exports = {
     usedby: 2,
     info: "Install, uninstall, share, or reload command modules",
     dmUser: false,
-    onPrefix: true,
-    dev: "Jonell Magallanes",
+    onPrefix: false,
+    dev: "Raniel Hiyan",
     cooldowns: 5,
 
     onLaunch: async function ({ api, event, target }) {

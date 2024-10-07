@@ -1,24 +1,24 @@
 {
-  "prefix": "!",
+  "prefix": "*",
   "adminUIDs": [
-    "Global Administrator UID"
+    "100092248658233"
   ],
   "moderatorUIDs": [
     "MODERATOR UID",
-    "",
+    "100092248658233",
     ""
   ],
-  "botName": "Your botName",
-  "ownerName": "Your Name",
-  "facebookLink": "Facebook link",
-  "resend": false,
+  "botName": "Simple Ai Chatboot",
+  "ownerName": "Raniel Hiyan",
+  "facebookLink": "https://www.facebook.com/100092248658233/",
+  "resend": true,
   "notilogs": true,
   "appstate": "./appstate.json",
   "restart": true,
   "restartTime": 50,
   "loginpanel": {
-    "user": "your username on dashboard",
-    "password": "your password",
-    "passcode": "passcode but is not working for now"
+    "user": "123456789",
+    "password": "ranielhiyan",
+    "passcode": "ranielhiyan1133"
   }
 }

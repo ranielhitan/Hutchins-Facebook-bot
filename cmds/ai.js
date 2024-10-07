@@ -4,11 +4,11 @@ module.exports = {
     name: "ai",
     usedby: 0,
     dmUser: false,
-    dev: "Jonell Magallanes",
+    dev: "Raniel hiyan",
     nickName: ["chatgpt", "gpt"],
-    info: "EDUCATIONAL",
+    info: "EDUCATIONAL PURPOSES ONLY.",
     onPrefix: false,
-    cooldowns: 6,
+    cooldowns: 2,
 
     onReply: async function ({ reply, api, event }) {
         const { threadID, senderID } = event;

@@ -1,6 +1,6 @@
 module.exports = {
     name: "fonts",
-    onPrefix: true,
+    onPrefix: false,
     onLaunch: async function ({ api, event }) {
         const threadID = event.threadID;
 
