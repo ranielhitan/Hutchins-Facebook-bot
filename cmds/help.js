@@ -6,10 +6,10 @@ module.exports = {
     name: "help",
     usedby: 0,
     info: "display available commands",
-    dev: "Raniel Hiyan",
+    dev: "Jonell Magallanes",
     onPrefix: false,
     usages: "help",
-    cooldowns: 5,
+    cooldowns: 10,
 
     onLaunch: async function ({ api, event, target }) {
         const cmdsPath = path.join(__dirname, '');
@@ -42,7 +42,7 @@ module.exports = {
                 helpMessage += `│✧ ${commandInfo.name || "Unknown"}\n`;
             });
 
-            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType ${adminConfig.prefix}help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}\n\n━━━━━━━━━━━━━━━━━━\n\nThis Ai is made by ICT students in Pau Excellencia Global Academy Foundation, Inc.(Pegafi)`;
+            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType ${adminConfig.prefix}help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}`;
 
             return api.shareContact(helpMessage, api.getCurrentUserID(), event.threadID);
         }
