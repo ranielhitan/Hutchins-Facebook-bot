@@ -1,8 +1,7 @@
 const handleLogSubscribe = (api, event, adminConfig) => {
   if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
       api.changeNickname(`${adminConfig.botName} • [ ${adminConfig.prefix} ]`, event.threadID, api.getCurrentUserID());
-      return api.shareContact(`✅ 𝗕𝗼𝘁 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱\n━━━━━━━━━━━━━━━━━━\n${adminConfig.botName} Bot connected successfully!\n━━━━━━━━━━━━━━━━━━\nAvailable Command\n 
-        Ai\nAi2\nImage\nMusic\nUnsend\nUid\nTid\nInfo\nNotif\n━━━━━━━━━━━━━━━━━━\n\n Contact Owner: ${adminConfig.ownerName}`, api.getCurrentUserID(), event.threadID);
+      return api.shareContact(`✅ 𝗕𝗼𝘁 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱\n━━━━━━━━━━━━━━━━━━\n${adminConfig.botName} Bot connected successfully!\n━━━━━━━━━━━━━━━━━━\nAvailable Command\n\n📍Ai\n📍Ai2\n📍Image\n📍Music\n📍Unsend\n📍Uid\n📍Tid\n📍Info\n📍Notif\n━━━━━━━━━━━━━━━━━━\n\n Contact Owner: ${adminConfig.ownerName}`, api.getCurrentUserID(), event.threadID);
   } else {
       const { threadID } = event;
       api.getThreadInfo(threadID, (err, threadInfo) => {
