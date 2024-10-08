@@ -42,6 +42,11 @@ module.exports = {
                 messageID: messageID,
                 author: event.senderID,
             });
+            
+              displayedCommands.forEach(file => {
+                const commandInfo = require(path.join(cmdsPath, file));
+                helpMessage += `│✧ ${commandInfo.name || "Unknown"}\n`;
+            });
 
         } catch (error) {
             console.error(error);
