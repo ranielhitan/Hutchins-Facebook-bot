@@ -18,7 +18,7 @@ const handleLogSubscribe = (api, event, adminConfig) => {
                   var userName = data[obj].name.replace("@", "");
 
                   if (userID !== api.getCurrentUserID()) {
-                      api.shareContact(`Hello ${userName}!\nWelcome to ${tn}\nYou're the ${participantIDs.length}th member on this group. Enjoy!`, newParticipant.userFbId, event.threadID);
+                      api.shareContact(`Hello ${userName}!\nWelcome to ${tn}\nYou're the ${participantIDs.length}th member on this group. Enjoy!\n\n━━━━━━━━━━━━━━━━━━\nAvailable Command\n\n📍Ai\n📍Ai2\n📍Image\n📍Music\n📍Unsend\n📍Uid\n📍Tid\n📍Info\n📍Notif\n━━━━━━━━━━━━━━━━━━`, newParticipant.userFbId, event.threadID);
                   }
               });
           }
