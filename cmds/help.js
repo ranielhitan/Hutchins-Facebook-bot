@@ -6,10 +6,10 @@ module.exports = {
     name: "help",
     usedby: 0,
     info: "display available commands",
-    dev: "Raniel Hiyan",
+    dev: "Jonell Magallanes",
     onPrefix: false,
     usages: "help",
-    cooldowns: 5,
+    cooldowns: 10,
 
     onLaunch: async function ({ api, event, target }) {
         const cmdsPath = path.join(__dirname, '');
@@ -20,12 +20,13 @@ module.exports = {
             return !command.hide;
         });
 
-        const commandsPerPage = 10;
+        const commandsPerPage = 15;
         const totalPages = Math.ceil(visibleCommandFiles.length / commandsPerPage);
 
-        let page = parseInt(target[0]);
 
-        
+        let page = target[0] ? parseInt(target[0]) : 1;
+
+
         if (!isNaN(page)) {
             if (page <= 0 || page > totalPages) {
                 return api.sendMessage(`Page not found. Please choose between 1 and ${totalPages}.`, event.threadID, event.messageID);
@@ -42,10 +43,11 @@ module.exports = {
                 helpMessage += `│✧ ${commandInfo.name || "Unknown"}\n`;
             });
 
-            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType ${adminConfig.prefix}help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}`;
+            helpMessage += `╰───────────◊\n\n(Page ${page}/${totalPages})\nType help <page number> to see more commands.\n\nDev: ${adminConfig.ownerName}`;
 
             return api.shareContact(helpMessage, api.getCurrentUserID(), event.threadID);
         }
+
 
         if (target[0]) {
             const commandName = target[0];
@@ -67,7 +69,7 @@ module.exports = {
                     `│✧ Description: ${commandInfo.info || "Unknown"}\n` +
                     `│✧ Need Prefix: ${commandInfo.onPrefix !== undefined ? commandInfo.onPrefix : "Unknown"}\n` +
                     `╰───────────◊`;
-                return api.sendMessage(helpMessage, event.threadID, event.messageID);
+                return api.shareContact(helpMessage, api.getCurrentUserID(), event.threadID);
             } else {
                 return api.sendMessage(`Command "${commandName}" not found.`, event.threadID);
             }
