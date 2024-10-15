@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
-    name: "ai2",
+    name: "ai",
     usedby: 0,
     dev: "Raniel Hiyan",
     info: "EDUCATIONAL PURPOSES ONLY.",
